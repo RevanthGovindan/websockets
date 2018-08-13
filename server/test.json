@@ -1,0 +1,13 @@
+[{
+    "company":"SBI",
+    "price":30000
+},{
+    "company":"Infosys",
+    "price":4000
+},{
+    "company":"kotak",
+    "price":5000
+},{
+    "company":"Reliance",
+    "price":10000
+}]

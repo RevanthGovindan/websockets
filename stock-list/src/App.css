@@ -1,0 +1,153 @@
+.App {  
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+.box{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:50%;
+  height:35%;
+  border: 2px solid black;
+  background-color: rgb(229, 197, 241);
+  box-shadow: 10px 10px #bdbcbc;
+}
+.header{
+  height: 40px;
+  border-bottom: 2px solid black;
+  font-size: 20px;
+  background-color: rgb(129, 194, 250);
+  color: white;
+}
+.footer{
+  position: fixed;
+  border-top: 2px solid black;
+  bottom: 0;
+  height: 10%;
+  width: 100%;
+  background-color: rgb(129, 194, 250);
+  color: white;
+  font-size: 20px;
+  font-family: Monospace;
+}
+.content{
+  font-weight: bold;
+}
+.sub{
+  width: 160px;
+}
+.headings{
+ position: absolute;
+ left:0px;
+ font-family: Monospace;
+}
+.button{
+ position: fixed;
+ right: 0px;
+ top:0px;
+}
+.green{
+  color: green;
+}
+.red{
+  color:rgb(247, 6, 6);
+  font-weight: bold;
+}
+.total{
+  position: fixed;
+left:10px;
+bottom: 2px;
+}
+.totalvalue{
+  font-weight: bold;
+  color: rgb(44, 41, 233);
+}
+.profit{
+  position: fixed;
+  bottom: 2px;
+  right: 60px;
+}
+@media screen and (max-width: 1062px) {
+  .footer{
+    font-size: 15px;
+    height:10%;
+  }
+  .sub{
+    width: 120px;
+  }
+  .header{
+    height: 80px;
+    font-size: 15px;
+  }
+  .headings{
+    position: absolute;
+    left:130px;
+   }
+  .content{
+    font-size:15px; 
+  }
+  .button{
+    font-size: 15px;
+    top:35px;
+    right:80px;
+   }
+}
+@media screen and (max-width: 860px){
+  .footer{
+    font-size: 12px;
+  }
+  .sub{
+    width: 120px;
+  }
+  .headings{
+    position: absolute;
+    left:90px;
+   }
+  .header{
+    height: 80px;
+    font-size: 18px;
+  }
+  .content{
+    font-size:12px; 
+  }
+}
+@media screen and (max-width: 360px){
+  .box{
+    width:80%;
+  }
+  .footer{
+    font-size: 12px;
+    height:17%;
+  }
+  .sub{
+    width: 120px;
+  }
+  .headings{
+    position: absolute;
+    left:60px;
+   }
+  .header{
+    height: 130px;
+    font-size: 18px;
+  }
+  .content{
+    font-size:12px; 
+  }
+  .button{
+    font-size: 15px;
+    top:35px;
+    left:70px;
+   }
+   .profit{
+    position: fixed;
+    bottom: 2px;
+   left: 0px;
+  }
+  .total{
+    position: fixed;
+  left:40px;
+  bottom: 13px;
+  }
+}
