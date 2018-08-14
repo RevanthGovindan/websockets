@@ -3,6 +3,13 @@
   width: 100%;
   height: 100%;
 }
+#rowDesign:hover {
+  background-color: #8a8a8a;
+  color:white;
+}
+#rowDesign:hover .closeicn{
+  color:white;
+}
 .box{
   position: fixed;
   top: 50%;
@@ -48,11 +55,22 @@
  right: 0px;
  top:0px;
 }
+.profit .green{
+  background-color: rgb(129, 194, 250);
+  color:green;
+  font-weight: bold;
+}
+.profit .red{
+  background-color: rgb(129, 194, 250);
+  color:red;
+  font-weight: bold;
+}
 .green{
-  color: green;
+  font-weight: bold;
+  background-color: rgb(135, 245, 135);
 }
 .red{
-  color:rgb(247, 6, 6);
+  background-color:rgb(241, 128, 128);
   font-weight: bold;
 }
 .total{
@@ -94,25 +112,7 @@ bottom: 2px;
     right:80px;
    }
 }
-@media screen and (max-width: 860px){
-  .footer{
-    font-size: 12px;
-  }
-  .sub{
-    width: 120px;
-  }
-  .headings{
-    position: absolute;
-    left:90px;
-   }
-  .header{
-    height: 80px;
-    font-size: 18px;
-  }
-  .content{
-    font-size:12px; 
-  }
-}
+
 @media screen and (max-width: 360px){
   .box{
     width:80%;
@@ -126,7 +126,7 @@ bottom: 2px;
   }
   .headings{
     position: absolute;
-    left:60px;
+    left:50px;
    }
   .header{
     height: 130px;
@@ -143,11 +143,64 @@ bottom: 2px;
    .profit{
     position: fixed;
     bottom: 2px;
-   left: 0px;
+   left: 45px;
   }
   .total{
     position: fixed;
-  left:40px;
+  left:85px;
   bottom: 13px;
+  }
+}
+
+@media screen and (max-width: 860px){
+  .footer{
+    font-size: 12px;
+  }
+  .headings{
+    position: absolute;
+    left:70px;
+   }
+  .header{
+    height: 80px;
+    font-size: 18px;
+  }
+  .content{
+    font-size:12px; 
+  }
+  .box{
+    width:80%;
+  }
+}
+@media screen and (max-width: 860px){
+  .footer{
+    font-size: 12px;
+    height: 45px;
+  }
+  .box{
+    width:80%;
+  }
+  .headings{
+    position: absolute;
+    left:70px;
+   }
+  .header{
+    height: 80px;
+    font-size: 18px;
+  }
+  .content{
+    font-size:12px; 
+  }
+  .total{
+    position: fixed;
+  left:80px;
+  bottom: 18px;
+  }
+  .profit{
+    position: fixed;
+    bottom: 2px;
+    left: 30px;
+  }
+  .sub{
+    width: 110px;
   }
 }

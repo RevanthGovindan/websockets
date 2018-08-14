@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import Total from './Total.js';
 class App extends Component {
   constructor() {
     super();
-    this.state = { status: 'subscribed', totalPorL: 0, totalprice: 0, stock: "SBI", price: 0, quantity: 0, data: [], list: [], PorLcolor: 'green' };
+    this.state = { status: 'subscribed', totalPorL: 0, totalprice: 0, stock: "SBI", price: '', quantity: '', data: [], list: [], PorLcolor: 'green' };
   }
   subscription() {
     const res = this.state.status === 'subscribed' ? 'unsubscribed' : 'subscribed';
@@ -102,7 +102,7 @@ class App extends Component {
       }
     }
    
-    this.setState({ list: Arr, price: 0, quantity: 0 });
+    this.setState({ list: Arr, price: '', quantity: '' });
     this.totalProAndLossCalc();
     e.preventDefault();
   }
@@ -112,7 +112,6 @@ class App extends Component {
       console.log('websocket is connected ...')
     }
     ws.onmessage = evt => {
-      console.log("hi")
       const list = JSON.parse(evt.data);
       this.setState({ data: list });
       this.updateList();
@@ -130,6 +129,11 @@ class App extends Component {
     } else if (e.target.name === "price") {
       this.setState({ price: data });
     }
+  }
+  removeStock(index){
+    const list = this.state.list;
+    list.splice(index,1);
+    this.setState({list:list});    
   }
   render() {
     return (
@@ -153,16 +157,18 @@ class App extends Component {
                     <th>Average</th>
                     <th>Price</th>
                     <th>Profitandloss</th>
+                    <th></th>
                   </tr>
                 </thead>
                 {
                   this.state.list.map((item, index) => <tbody key={index}>
-                    <tr>
+                    <tr  className={item.color} id="rowDesign">
                       <td>{item.stock}</td>
                       <td>{item.quantity}</td>
                       <td>{item.average}</td>
                       <td>{item.price}</td>
-                      <td className={item.color}>{item.profitorloss}</td>
+                      <td>{item.profitorloss}</td>
+                      <td><button className="close closeicn" onClick={this.removeStock.bind(this,index)} aria-label="Close"><span aria-hidden="true">&times;</span></button></td>
                     </tr>
                   </tbody>
                   )
@@ -170,11 +176,7 @@ class App extends Component {
               </table>
             </div>
           </div>
-
-          <div className="d-block p-2 footer">
-            <span className="total">Total Price : <span className="totalvalue">{this.state.totalprice}</span></span>
-            <div className="profit">Profit and Loss : <span className={this.state.PorLcolor}>{this.state.totalPorL}</span></div>
-          </div>
+         <Total totalprice={this.state.totalprice} totalPorL={this.state.totalPorL} PorLcolor={this.state.PorLcolor}/>
 
         </div>
         <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
